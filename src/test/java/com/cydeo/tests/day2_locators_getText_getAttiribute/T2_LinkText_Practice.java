@@ -1,7 +1,9 @@
 package com.cydeo.tests.day2_locators_getText_getAttiribute;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class T2_LinkText_Practice {
@@ -14,13 +16,39 @@ public class T2_LinkText_Practice {
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
 
-        //  2- Go to: https://practice.cydeo.com
-     //   3- Click to A/B Testing from top of the list.
+     //  2- Go to: https://practice.cydeo.com
+        driver.get("https://practice.cydeo.com");
+
+     //3- Click to A/B Testing from top of the list.
+        //Thread.sleep(2000);
+        // driver.findElement(By.linkText("A/B Testing")).click();
+        WebElement abTestLink = driver.findElement(By.linkText("A/B Testing")); // more readable
+        abTestLink.click();
+
       //  4- Verify title is:
      //   Expected: No A/B Test
+        String expectedTitle = "No A/B Test";
+        String actualTitle = driver.getTitle();
+
+        if (actualTitle.equals(expectedTitle)){
+            System.out.println("Title verification PASS!");
+        }else {
+            System.out.println("Title verification FAIL!");
+        }
+
      //   5- Go back to home page by using the .back();
-    //    6- Verify title equals:
-     //   Expected: Practice
+        driver.navigate().back();
+
+    //6- Verify title equals:
+   //   Expected: Practice
+        expectedTitle = "Practice";
+        actualTitle = driver.getTitle();
+
+        if (actualTitle.equals(expectedTitle)){
+            System.out.println("Title verification Passed!");
+        }else{
+            System.out.println("Title verification Failed!");
+        }
 
 
 
