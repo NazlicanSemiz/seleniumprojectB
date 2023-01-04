@@ -25,6 +25,7 @@ public class homework1 {
 
         //4. Verify title:
         //Expected: “Wooden spoon | Etsy”
+
         String expectedTitle = "Wooden spoon | Etsy";
         String actualTitle = driver.getTitle();
 
