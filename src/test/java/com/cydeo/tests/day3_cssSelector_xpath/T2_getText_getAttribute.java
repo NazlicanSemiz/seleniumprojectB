@@ -53,6 +53,11 @@ public class T2_getText_getAttribute {
 
         System.out.println("actualInHrefAttributeValue = " + actualInHrefAttributeValue);
 
+        if (actualInHrefAttributeValue.contains(expectedInHrEF)){
+            System.out.println("HREF attribute value verification Passed ");
+        }else {
+            System.out.println("Href attribute value verification Failed");
+        }
 
     }
 }
