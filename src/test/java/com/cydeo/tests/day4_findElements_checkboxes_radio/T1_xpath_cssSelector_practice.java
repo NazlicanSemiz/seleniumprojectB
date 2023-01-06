@@ -1,6 +1,7 @@
 package com.cydeo.tests.day4_findElements_checkboxes_radio;
 
 import com.cydeo.utilities.WebDriverFactory;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -20,12 +21,34 @@ public class T1_xpath_cssSelector_practice {
         //locator only (total of 6)
         //a. “Home” link
         //Locate homeLink using cssSelector
-        WebElement homeLink_ex1 = d
+        WebElement homeLink_ex1 = driver.findElement(By.cssSelector("a[class='nav-link']"));
 
+        //Locate homelink using cssselector syntax #2
+        WebElement homelink_ex2 = driver.findElement(By.cssSelector("a.nav-link"));
+
+        // Locate homelink using cssSelector, href value
+        WebElement homeLink_ex3 = driver.findElement(By.cssSelector("a[href='/']"));
 
         //b. “Forgot password” header
+        //Locate header using cssSelector: locate parent element and move down to h2
+        WebElement header_ex1 = driver.findElement(By.cssSelector("div.example >h2"));
+
+        // Locate header sing xpath, and using web element text "Fogor Password"
+        //WebElement header_ex2 = driver.findElement(By.xpath("//h2[.='Forgot Password']"));
+        WebElement header_ex2 = driver.findElement(By.xpath("//h2[text()='Forgot Password']"));
+
         //c. “E-mail” text
+        WebElement emailLabel= driver.findElement(By.xpath("//label[@for='email']"));
+
         //d. E-mail input box
+        WebElement inputBox_ex1 = driver.findElement(By.xpath("//input[@name='email']"));
+
+        // Loacte inputBox using xpath contains method
+
+        // tagName[contains(@attribute,'value')]
+
+        WebElement inputBox_ex2 = driver.findElement(By.xpath("//input[@name='email']"));
+
         //e. “Retrieve password” button
         //f. “Powered by Cydeo text
         //4. Verify all web elements are displayed.
