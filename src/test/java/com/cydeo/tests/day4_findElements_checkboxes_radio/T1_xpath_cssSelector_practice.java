@@ -23,17 +23,17 @@ public class T1_xpath_cssSelector_practice {
         //Locate homeLink using cssSelector
         WebElement homeLink_ex1 = driver.findElement(By.cssSelector("a[class='nav-link']"));
 
-        //Locate homelink using cssselector syntax #2
-        WebElement homelink_ex2 = driver.findElement(By.cssSelector("a.nav-link"));
+        //Locate homeLink using cssSelector syntax #2
+        WebElement homeLink_ex2 = driver.findElement(By.cssSelector("a.nav-link"));
 
-        // Locate homelink using cssSelector, href value
+        // Locate homeLink using cssSelector, href value
         WebElement homeLink_ex3 = driver.findElement(By.cssSelector("a[href='/']"));
 
         //b. “Forgot password” header
         //Locate header using cssSelector: locate parent element and move down to h2
         WebElement header_ex1 = driver.findElement(By.cssSelector("div.example >h2"));
 
-        // Locate header sing xpath, and using web element text "Fogor Password"
+        // Locate header sing xpath, and using web element text "Forgot Password"
         //WebElement header_ex2 = driver.findElement(By.xpath("//h2[.='Forgot Password']"));
         WebElement header_ex2 = driver.findElement(By.xpath("//h2[text()='Forgot Password']"));
 
@@ -43,7 +43,7 @@ public class T1_xpath_cssSelector_practice {
         //d. E-mail input box
         WebElement inputBox_ex1 = driver.findElement(By.xpath("//input[@name='email']"));
 
-        // Loacte inputBox using xpath contains method
+        // Locate inputBox using xpath contains method
 
         // tagName[contains(@attribute,'value')]
 
