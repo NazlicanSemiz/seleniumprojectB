@@ -27,6 +27,15 @@ public class T4_cssSelector_getText {
         //locating reset password button using VALUE attribute and its value
         WebElement resetPasswordButton = driver.findElement(By.cssSelector("button[value='Reset password']"));
 
+        String expectedResetPasswordButtonText="Reset password";
+        String actualResetPasswordButtonTxt= resetPasswordButton.getText();
+
+        if (actualResetPasswordButtonTxt.equals(expectedResetPasswordButtonText)){
+            System.out.println("Button text verification passed");
+        }else {
+            System.out.println("Button text verification failed");
+        }
+
 
 
     }
