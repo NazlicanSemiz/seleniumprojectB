@@ -47,7 +47,7 @@ public class T1_xpath_cssSelector_practice {
 
         // tagName[contains(@attribute,'value')]
 
-        WebElement inputBox_ex2 = driver.findElement(By.xpath("//input[@name='email']"));
+        WebElement inputBox_ex2 = driver.findElement(By.xpath("//input[contain(@pattern,'a-z']"));
 
         //e. “Retrieve password” button
         //f. “Powered by Cydeo text
