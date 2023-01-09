@@ -3,17 +3,22 @@ package com.cydeo.tests.day5_testNG_intro_dropdowns;
 import com.cydeo.utilities.WebDriverFactory;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
 
 public class TestNG_Selenium {
 
-    @Test
-    public void selenium_test(){
+    WebDriver driver;
+
+    @BeforeMethod
+    public void setupMethod(){
         //Do browser driver setup
-        //Open Browser
-        WebDriver driver = WebDriverFactory.getDriver("chrome");
+        //Open browser
+        driver= WebDriverFactory.getDriver("chrome");
+
 
         //Maximize the page
         driver.manage().window().maximize();
@@ -21,12 +26,31 @@ public class TestNG_Selenium {
         //Implicit wait
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
+    }
+
+    @AfterMethod
+    public void tearDownMethod(){
+        driver.close();
+    }
+
+    @Test
+    public void selenium_test(){
+
+
         //Get "https://google.com"
         driver.get("https://google.com");
 
         //Assert: title is "Google"
 
         Assert.assertEquals(driver.getTitle(), "Google");
+
+        // I CAN LIKE THIS TOO
+        /*
+        String actual= "blabla";
+        String expected = "djsk;
+
+        Assert.assertTrue(actual.equals(expected),"your message will go here");
+         */
 
 
 
