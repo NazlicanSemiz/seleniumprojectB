@@ -48,6 +48,6 @@ public class T1_StaleElementRefEx {
 
         // USE XPATH LOCATOR FOR ALL WEBELEMENT LOCATORS
 
-
+driver.close();
     }
 }
