@@ -52,6 +52,23 @@ public static void switchWindowAndVerify(WebDriver driver, String expectedInUrl,
 
 }
 
+/*
+This method accepts String "expectedTtitle" and Assert if its true
+ */
 
+    public static void verifyTitle(WebDriver driver ,String expectedTitle){
 
+        Assert.assertEquals(driver.getTitle(), expectedTitle);
+
+    }
+
+    /*
+    Creating a utility method for ExplicitWait, so we don't have to repeat the lines
+     */
+    /*
+    public static void waitForInvisibilityOf(WebElement webElement){
+        //driver.getDriver().manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
+        WebDriverWait wait = new WebDriverWait(driver.getDriver(), 10);
+        wait.until(ExpectedConditions.invisibilityOf(webElement));
+    }*/
 }
